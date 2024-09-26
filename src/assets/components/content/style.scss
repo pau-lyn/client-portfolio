@@ -1,0 +1,24 @@
+$bg-color: #262626;
+$content-bg-color: #2e2e2e ;
+$active-color: #f7d748;
+$color: #fffff0;
+
+.content{
+   
+        background-color: $content-bg-color;
+        margin-right: 2em !important;
+        margin-bottom: 2em !important;
+        border-radius: .5em;
+        height: calc(100vh - 10em); 
+    
+        
+}
+
+@media (max-width: 576px){
+    
+    .content{
+        margin-right: .5em !important;
+        margin-bottom: .5em !important;
+        height: calc(100vh - 5.5em);
+    }
+}

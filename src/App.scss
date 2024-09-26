@@ -1,0 +1,45 @@
+$bg-color: #262626;
+$content-bg-color: #2e2e2e ;
+$active-color: #f7d748;
+$color: #fffff0;
+.app {
+    color: $color;
+    background-color: $bg-color;
+    .row{
+        margin: 0 ; 
+        padding: 0 ; 
+    }
+    .bar-col, .bar-col > * {
+        margin: 0 ; 
+        padding: 0; 
+    }
+    h3 {
+        font-weight: 700;
+        position: relative; 
+        display: inline-block; 
+
+        &:after{
+            content: ""; 
+            display: block; 
+            width: 2em; 
+            height: .1em;
+            background-color: $active-color;
+            position: absolute;
+            left: 0; 
+            bottom: -.3em; 
+        }
+    }
+
+    
+      
+}
+
+@media (max-width: 576px){
+    
+    .app{
+
+        h3{
+            font-size: 18px;
+        }
+    }
+}

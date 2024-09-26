@@ -1,0 +1,18 @@
+$bg-color: #262626;
+$content-bg-color: #2e2e2e;
+$active-color: #f7d748;
+$color: #fffff0;
+
+
+button{
+    background-color: $active-color !important;
+    border: none !important;
+    color: $content-bg-color !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+
+    &:hover{
+        background-color: $bg-color !important;
+        color: $active-color !important;
+    }
+}

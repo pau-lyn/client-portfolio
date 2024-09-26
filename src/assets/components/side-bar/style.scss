@@ -1,0 +1,25 @@
+$bg-color: #262626;
+$content-bg-color: #2e2e2e ;
+$active-color: #f7d748;
+$color: #fffff0;
+
+.side-bar{
+    
+    .bg-body-tertiary{
+        background-color: $content-bg-color !important;
+        margin: 2em;
+        border-radius: .5em;
+        height: calc(100vh - 4em);
+    }
+}
+
+
+@media (max-width: 576px){
+    
+    .side-bar{
+        .bg-body-tertiary{
+            margin: .5em ;
+            height: calc(100vh - 1em);
+        }
+    }
+}

@@ -1,0 +1,19 @@
+$bg-color: #262626;
+$content-bg-color: #2e2e2e ;
+$active-color: #f7d748;
+$color: #fffff0;
+$border-color: #10472e;
+
+.card{
+    background-color: transparent;
+    border: 1px solid $border-color;
+    color: $color;
+
+    .card-title{
+        font-size: 16px;
+    }
+    .card-text{
+        font-weight: 400;
+        font-size: 14px;
+    }
+}

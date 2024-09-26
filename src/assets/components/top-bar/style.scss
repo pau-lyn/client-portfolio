@@ -1,0 +1,40 @@
+$bg-color: #262626;
+$content-bg-color: #2e2e2e ;
+$active-color: #f7d748;
+$color: #fffff0;
+
+.top-bar{
+    background-color: $bg-color;
+    width: 100%;
+    .bg-body-tertiary{
+        background-color: $content-bg-color !important;
+        margin: 2em 2em 2em 0;
+        border-radius: .5em;
+        height: 4em;
+    }
+    .nav-link {
+        margin: 1em;
+        color: $color;
+        &.active, &:hover { 
+            color: $active-color !important;
+        }
+    }
+    
+}
+
+@media (max-width: 576px){
+    
+    .top-bar{
+        .bg-body-tertiary{
+            margin: .5em .5em .5em 0;
+        }
+        .container{
+            background-color: $content-bg-color;
+            z-index: 1000;
+        }
+        .nav-link{
+            text-align: center;
+        }
+    }
+}
+  
