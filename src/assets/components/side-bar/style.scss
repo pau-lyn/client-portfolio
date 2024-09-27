@@ -1,25 +1,168 @@
 $bg-color: #262626;
-$content-bg-color: #2e2e2e ;
+$content-bg-color: #2e2e2e;
 $active-color: #f7d748;
 $color: #fffff0;
 
-.side-bar{
-    
-    .bg-body-tertiary{
+.side-bar {
+    .bg-body-tertiary {
         background-color: $content-bg-color !important;
         margin: 2em;
-        border-radius: .5em;
+        border-radius: 0.5em;
         height: calc(100vh - 4em);
+        transition: width 0.3s ease;
+        padding: 1em;
+
+        .toggle-btn {
+            background-color: $content-bg-color !important;
+            color: $color !important;
+            border: none;
+            margin: .5em 0;
+
+            &:hover{
+                color: $active-color !important;
+            }
+
+            &.collapsed{
+                margin: 0 0 5em 0;
+            }
+        }
+
+        .sidebar-content {
+            h5 {
+                font-size: 24px;
+                font-weight: 800;
+                
+            }
+            .role {
+                background-color: #02542c;
+                padding: 0.5em 2em;
+                border-radius: 10px;
+            }
+            img {
+                width: 60%;
+                border-radius: 10px;
+                border: 0.3em solid #fffff0;
+                margin: 1em 0;
+            }
+            .svg-icon {
+                background-color: $bg-color;
+                padding: 0.5em 0.8em;
+                border-radius: 10px;
+            
+            }
+            .text {
+                color: #02542c;
+                font-weight: 700;
+            }
+            svg:hover{
+                fill: $active-color;
+            }
+
+            .dropend{
+               display: flex;
+               justify-content: center;
+               margin: 1em 0 8em 0;
+
+               .dropdown-toggle {
+                    display: flex;
+                    align-items: center;
+            
+                    &:hover {
+                    svg {
+                        fill: $active-color; 
+                    }
+                    }
+                }
+                .show{
+                    background-color: $bg-color;
+
+                    color: $color;
+                    .dropdown-item{
+                        pointer-events: none; 
+                        background-color: transparent !important; 
+                        color: inherit; 
+                        margin: 1em 0; 
+
+                        &:hover {
+                            background-color: transparent !important; 
+                            color: inherit; 
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+    &.collapsed .bg-body-tertiary {
+        padding: 0;
+        margin: 2em;
+        
+    }
+
+    .icon-container {
+            margin-top: auto;
+            
+            .link {
+                display: flex;
+                justify-content: space-between; 
+
+                &.collapsed {
+                    flex-direction: column; 
+                    align-items: center; 
+
+                    svg{
+                        margin-top: auto;
+                        margin: 1em 0
+                    
+                    }
+                
+                }
+            }
+    }
+
+    &.collapsed .sidebar-content {
+        .svg-icon {
+            justify-content: center; 
+            margin: 0;
+            
+        }
+        .text, hr {
+            display: none;
+        }
+
+       
+
+        
     }
 }
 
-
-@media (max-width: 576px){
-    
-    .side-bar{
-        .bg-body-tertiary{
-            margin: .5em ;
+@media (max-width: 576px) {
+    .side-bar {
+        .bg-body-tertiary {
+            margin: 0.5em;
             height: calc(100vh - 1em);
+            width: 3em;
+            transition: width 0.3s ease;
+            padding: 0;
+        }
+        .dropend{
+            .dropdown-item{
+                margin: 1em 0;
+                font-size: 12px;
+                h5 {
+                    font-size: 18px;            
+                }
+            }
+        }
+
+        &.collapsed .bg-body-tertiary {
+            margin: 0.5em;
+            z-index: 1001;
+            transition: width 0.3s ease;
+            .sidebar-content{
+                padding: 0;
+            }
         }
     }
 }
