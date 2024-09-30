@@ -5,7 +5,7 @@ import SideBar from "./assets/components/side-bar";
 import MainContent from "./assets/components/content";
 import "./App.scss";
 
-type Section = "about" | "resume";
+type Section = "about" | "resume" | "portfolio" | "blog" | "contact";
 
 function App() {
   const [activeSection, setActiveSection] = useState<Section>("about");

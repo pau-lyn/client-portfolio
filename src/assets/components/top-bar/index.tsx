@@ -5,7 +5,9 @@ import Navbar from "react-bootstrap/Navbar";
 import "./style.scss";
 
 interface TopBarProps {
-  onSectionChange: (section: "about" | "resume") => void;
+  onSectionChange: (
+    section: "about" | "resume" | "portfolio" | "blog" | "contact"
+  ) => void;
 }
 
 const TopBar: React.FC<TopBarProps> = ({ onSectionChange }) => {
@@ -26,9 +28,21 @@ const TopBar: React.FC<TopBarProps> = ({ onSectionChange }) => {
               >
                 Resume
               </Nav.Link>
-              <Nav.Link href="#portfolio">Portfolio</Nav.Link>
-              <Nav.Link href="#blog">Blog</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
+              <Nav.Link
+                href="#portfolio"
+                onClick={() => onSectionChange("portfolio")}
+              >
+                Portfolio
+              </Nav.Link>
+              <Nav.Link href="#blog" onClick={() => onSectionChange("blog")}>
+                Blog
+              </Nav.Link>
+              <Nav.Link
+                href="#contact"
+                onClick={() => onSectionChange("contact")}
+              >
+                Contact
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

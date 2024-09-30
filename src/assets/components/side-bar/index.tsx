@@ -7,6 +7,8 @@ import EmailIcon from "../icons/email";
 import TrelloIcon from "../icons/trello";
 import InfoIcon from "../icons/info";
 import ButtonComponent from "../button";
+import ExpandIcon from "../icons/expand";
+import CompressIcon from "../icons/compress";
 
 import "./style.scss";
 
@@ -27,7 +29,11 @@ function SideBar({ isCollapsed, toggleSidebar }: SideBarProps) {
               }`}
               onClick={toggleSidebar}
             >
-              {isCollapsed ? ">" : "<"}
+              {isCollapsed ? (
+                <ExpandIcon color="#fffff0" />
+              ) : (
+                <CompressIcon color="#fffff0" />
+              )}
             </ButtonComponent>
           </div>
           <div className={`sidebar-content ${isCollapsed ? "collapsed" : ""}`}>
