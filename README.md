@@ -23,6 +23,7 @@ Additional features may be added as the project evolves.
 Here’s what has been completed so far in the project:
 
 - About Me: Initial design and layout, including introduction.
+- Resume Section
 
 ## Technologies Used
 
