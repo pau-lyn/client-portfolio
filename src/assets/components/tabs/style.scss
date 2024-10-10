@@ -6,10 +6,7 @@ $color: #fffff0;
 .custom-tabs {
     border: none !important;
 
-    .nav-item {
-        margin: 0 2em;
-    }
-
+    
     button {
         background-color: transparent !important;
         color: $color !important;
@@ -23,29 +20,37 @@ $color: #fffff0;
             color: $active-color !important;
         }
     }
+   
+    
 }
 .tab-content {
     
     max-height: calc(100vh - 19em) !important;
     overflow-y: auto; 
-    padding-right: .1em;
     transition: max-height 1s ease;
     display: block;
 
     &::-webkit-scrollbar {
         width: .3em;
+        
     }
     
     &::-webkit-scrollbar-track {
         background: $content-bg-color;
+        
     }
     
     &::-webkit-scrollbar-thumb {
         background-color: $active-color !important;
         border-radius: 10px;  
+        
     }
     
     &::-webkit-scrollbar-thumb:hover {
         background-color: $color !important;
+    }
+
+    @media (max-width: 900px) {
+        max-height: calc(100vh - 23em) !important;
     }
 }

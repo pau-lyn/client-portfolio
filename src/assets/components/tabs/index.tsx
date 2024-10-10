@@ -23,10 +23,10 @@ function TabComponent() {
       {categories.map((category) => (
         <Tab eventKey={category.key} title={category.title} key={category.key}>
           <div className="tab-content">
-            <Row className="d-flex">
+            <Row className="d-flex ">
               {category.key === "all"
                 ? pdfFiles.map((pdf, index) => (
-                    <Col lg={3} md={6} xs={12} className="pdf-item" key={index}>
+                    <Col lg={4} md={6} xs={12} className="pdf-item" key={index}>
                       <a
                         href={pdf.pdfLink}
                         target="_blank"
@@ -41,7 +41,7 @@ function TabComponent() {
                     .filter((pdf) => pdf.category === category.key)
                     .map((pdf, index) => (
                       <Col
-                        lg={3}
+                        lg={4}
                         md={6}
                         xs={12}
                         className="pdf-item"
