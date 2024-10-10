@@ -13,35 +13,41 @@ import CompressIcon from "../icons/compress";
 import "./style.scss";
 
 interface SideBarProps {
-  isCollapsed: boolean;
+  isCompressed: boolean;
   toggleSidebar: () => void;
 }
 
-function SideBar({ isCollapsed, toggleSidebar }: SideBarProps) {
+function SideBar({ isCompressed, toggleSidebar }: SideBarProps) {
   return (
-    <div className={`side-bar ${isCollapsed ? "collapsed" : ""}`}>
+    <div className={`side-bar ${isCompressed ? "compressed" : ""}`}>
       <Navbar expand="lg" className="bg-body-tertiary">
-        <Container className="d-flex flex-column">
-          <div className="d-flex align-items-start">
+        <Container
+          className={`d-flex flex-column ${
+            isCompressed ? "compressed" : "align-items-start"
+          }`}
+        >
+          <div className="d-flex">
             <ButtonComponent
-              classname={`toggle-btn d-none d-md-block ${
-                isCollapsed ? "collapsed" : ""
+              classname={`toggle-btn d-none d-lg-block ${
+                isCompressed ? "compressed" : ""
               }`}
               onClick={toggleSidebar}
             >
-              {isCollapsed ? (
+              {isCompressed ? (
                 <ExpandIcon color="#fffff0" />
               ) : (
                 <CompressIcon color="#fffff0" />
               )}
             </ButtonComponent>
           </div>
-          <div className={`sidebar-content ${isCollapsed ? "collapsed" : ""}`}>
+          <div
+            className={`sidebar-content ${isCompressed ? "compressed" : ""}`}
+          >
             <div className="d-flex flex-column align-items-center">
               <img src={ProfileImage} alt="Profile" />
             </div>
 
-            {!isCollapsed ? (
+            {!isCompressed ? (
               <div className="d-flex flex-column align-items-center">
                 <div className="d-flex flex-column align-items-center">
                   <h5>Jennie Kim</h5>
@@ -114,7 +120,7 @@ function SideBar({ isCollapsed, toggleSidebar }: SideBarProps) {
             <div className="icon-container">
               <div
                 className={`d-flex justify-content-between link mx-4 mt-5 ${
-                  isCollapsed ? "collapsed" : ""
+                  isCompressed ? "compressed" : ""
                 }`}
               >
                 <TrelloIcon color="" />

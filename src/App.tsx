@@ -9,19 +9,19 @@ type Section = "about" | "resume" | "portfolio" | "blog" | "contact";
 
 function App() {
   const [activeSection, setActiveSection] = useState<Section>("about");
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCompressed, setIsCompressed] = useState(false);
 
   const handleSectionChange = (section: Section) => {
     setActiveSection(section);
   };
 
-  // Detect the screen size and set sidebar to be collapsed by default on mobile
+  // Detect the screen size and set sidebar to be Compressed by default on mobile
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 576) {
-        setIsCollapsed(true);
+      if (window.innerWidth <= 1000) {
+        setIsCompressed(true);
       } else {
-        setIsCollapsed(false);
+        setIsCompressed(false);
       }
     };
 
@@ -33,23 +33,25 @@ function App() {
   }, []);
 
   const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
+    setIsCompressed(!isCompressed);
   };
 
   return (
-    <div className={`app ${isCollapsed ? "sidebar-collapsed" : ""}`}>
+    <div className={`app ${isCompressed ? "sidebar-Compressed" : ""}`}>
       <Row>
         <Col
-          lg={isCollapsed ? 1 : 3}
-          xs={isCollapsed ? 2 : 2}
+          lg={isCompressed ? 1 : 3}
+          md={isCompressed ? 2 : 2}
+          xs={isCompressed ? 2 : 2}
           className="bar-col"
         >
-          <SideBar isCollapsed={isCollapsed} toggleSidebar={toggleSidebar} />
+          <SideBar isCompressed={isCompressed} toggleSidebar={toggleSidebar} />
         </Col>
 
         <Col
-          lg={isCollapsed ? 11 : 9}
-          xs={isCollapsed ? 10 : 10}
+          lg={isCompressed ? 11 : 9}
+          md={isCompressed ? 10 : 10}
+          xs={isCompressed ? 10 : 10}
           className="content-col"
         >
           <TopBar onSectionChange={handleSectionChange} />
